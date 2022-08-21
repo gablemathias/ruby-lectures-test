@@ -9,6 +9,7 @@ class Room
   end
 
   def add(patient)
+    patient.room = self
     @patients << patient
   end
 
@@ -31,3 +32,13 @@ room.add(john)
 room.patients.each do |patient|
   puts patient.name
 end
+
+p room
+
+lucas = Patient.new(name: 'Lucas')
+
+room2 = Room.new(capacity: 3)
+
+room2.add(lucas)
+
+p room2

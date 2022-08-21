@@ -9,7 +9,8 @@
 # LOOK this is just a comment practice at the top-level. Nothing more.
 
 class Patient
-  attr_reader :name
+  attr_reader :name, :cured
+  attr_accessor :room
 
   def initialize(attributes = {})
     @name = attributes[:name]
