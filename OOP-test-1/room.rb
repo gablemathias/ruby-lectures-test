@@ -1,6 +1,8 @@
 require_relative './patient'
 
 class Room
+  attr_reader :patients
+
   def initialize(attributes = {})
     @capacity = attributes[:capacity]
     @patients = attributes[:patients] || []
@@ -11,7 +13,7 @@ class Room
   end
 
   # def full?
-
+  #   @capacity ==
   # end
 end
 
@@ -26,4 +28,6 @@ john = Patient.new(name: 'John', cured: true)
 
 room.add(john)
 
-p room
+room.patients.each do |patient|
+  puts patient.name
+end
