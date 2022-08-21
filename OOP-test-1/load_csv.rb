@@ -12,5 +12,6 @@ CSV.foreach(csv_file, headers: :first_row, header_converters: :symbol) do |row|
   patients << Patient.new(row)
 end
 
-# patients.each { |patient| p patient.name }
-# patients.each { |patient| p patient.cured }
+patients.each { |patient| p patient.id }
+patients.each { |patient| p patient.name }
+patients.each { |patient| p patient.cured }
