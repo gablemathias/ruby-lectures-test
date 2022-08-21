@@ -10,18 +10,14 @@
 
 class Patient
   attr_reader :name, :cured
-  attr_accessor :room
+  attr_accessor :room, :id
 
   def initialize(attributes = {})
     @name = attributes[:name]
     @cured = attributes[:cured] || false
   end
 
-  def cured
+  def cured?
     @cured = true
   end
 end
-
-patient = Patient.new(name: 'John', cured: true)
-
-p patient

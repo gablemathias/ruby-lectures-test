@@ -2,11 +2,12 @@ require_relative './patient'
 
 class Room
   attr_reader :patients
+  attr_accessor :id
 
   class FullRoom < StandardError; end
 
   def initialize(attributes = {})
-    @capacity = attributes[:capacity]
+    @capacity = attributes[:capacity] || 0
     @patients = attributes[:patients] || []
   end
 
@@ -58,4 +59,3 @@ room2 = Room.new(capacity: 3)
 room2.add(lucas)
 
 p room2
-  
