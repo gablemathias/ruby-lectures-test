@@ -5,16 +5,21 @@ class RoomRepository
 
   def initialize(csv_file)
     @csv_file = csv_file
-    @room = []
+    @rooms = []
     @next_id = 0
     load_csv
   end
 
   def add(room)
     room.id = @next_id
-    @room << room
+    @rooms << room
     @next_id += 1
   end
+
+  def find(index)
+    @rooms[index]
+  end
+
 
   private
 
@@ -22,9 +27,9 @@ class RoomRepository
     CSV.foreach(@csv_file, headers: :first_row, header_converters: :symbol) do |row|
       row[:id] = row[:id].to_i
       row[:capacity] = row[:capacity].to_i
-      @room << Room.new(row)
+      @rooms << Room.new(row)
     end
-    @next_id = @room.empty? ? 1 : @room.last.id + 1
+    @next_id = @rooms.empty? ? 1 : @rooms.last.id + 1
   end
 
 end

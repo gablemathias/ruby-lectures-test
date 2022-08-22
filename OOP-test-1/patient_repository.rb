@@ -23,6 +23,9 @@ class PatientRepository
       row[:id] = row[:id].to_i
       row[:cured] = row[:cured] == 'true'
       patient = Patient.new(row)
+
+      
+
       @patients << patient
     end
     @next_id = @patients.empty? ? 1 : @patients.last.id + 1
