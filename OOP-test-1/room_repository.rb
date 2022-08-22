@@ -29,6 +29,5 @@ class RoomRepository
 
 end
 
-room_repo = RoomRepository.new('./room.csv')
-
-p room_repo
+# room_repo = RoomRepository.new('./room.csv')
+# p room_repo
