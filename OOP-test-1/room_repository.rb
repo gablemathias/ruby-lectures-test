@@ -20,7 +20,6 @@ class RoomRepository
     @rooms[index]
   end
 
-
   private
 
   def load_csv
