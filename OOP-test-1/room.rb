@@ -7,6 +7,7 @@ class Room
   class FullRoom < StandardError; end
 
   def initialize(attributes = {})
+    @id = attributes[:id]
     @capacity = attributes[:capacity] || 0
     @patients = attributes[:patients] || []
   end
@@ -23,39 +24,39 @@ class Room
   end
 end
 
-room = Room.new(capacity: 2)
+# room = Room.new(capacity: 2)
 
-p room
+# p room
 
-sarah = Patient.new(name: 'Sarah')
-room.add(sarah)
+# sarah = Patient.new(name: 'Sarah')
+# room.add(sarah)
 
-puts 'Is the room full?'
-puts room.full?
-puts '---------'
+# puts 'Is the room full?'
+# puts room.full?
+# puts '---------'
 
-john = Patient.new(name: 'John', cured: true)
+# john = Patient.new(name: 'John', cured: true)
 
-room.add(john)
+# room.add(john)
 
-puts 'Is the room full?'
-puts room.full?
-puts '---------'
+# puts 'Is the room full?'
+# puts room.full?
+# puts '---------'
 
-carlos = Patient.new(name: 'Carlos')
+# carlos = Patient.new(name: 'Carlos')
 
-room.add(carlos)
+# room.add(carlos)
 
-room.patients.each do |patient|
-  puts patient.name
-end
+# room.patients.each do |patient|
+#   puts patient.name
+# end
 
-p room
+# p room
 
-lucas = Patient.new(name: 'Lucas')
+# lucas = Patient.new(name: 'Lucas')
 
-room2 = Room.new(capacity: 3)
+# room2 = Room.new(capacity: 3)
 
-room2.add(lucas)
+# room2.add(lucas)
 
-p room2
+# p room2

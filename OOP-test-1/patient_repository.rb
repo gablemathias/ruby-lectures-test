@@ -30,17 +30,17 @@ class PatientRepository
   end
 end
 
-repo = PatientRepository.new('./patients.csv')
-p repo
+# repo = PatientRepository.new('./patients.csv')
+# p repo
 
-lucas = Patient.new(name: 'Lucas')
+# lucas = Patient.new(name: 'Lucas')
 
-repo.add(lucas)
+# repo.add(lucas)
 
-p repo
+# p repo
 
-gabriel = Patient.new(name: 'Gabriel')
+# gabriel = Patient.new(name: 'Gabriel')
 
-repo.add(gabriel)
+# repo.add(gabriel)
 
-p repo
+# p repo
